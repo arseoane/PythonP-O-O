@@ -28,9 +28,12 @@ class Persoa:
 
     def comprobarDNI(self,dni):
         if len(dni) == 9 and str(dni[-1]).isupper() and dni[:8].isdigit():
-            return dni
+            if str(self.numero_dni + self.letra_dni) == "TRWAGMYFPDXBNJZSQVHLCKE"[int(self.numero_dni) % 23]:
+                return dni
+            else:
+                return "00000000X"
         else:
-            return "XXXXXXXXX"
+            return "00000000X"
 
 
     def __str__(self):
