@@ -4,7 +4,7 @@ class Cilindro:
         self.r = r
         self.h = h
 
-    def propiedades_cilindro(r, h):
+    def propiedades_cilindro(r:float, h:float):
         areabase = math.pi * r ** 2
         arealat = 2 * math.pi * r * h
         areatotal = 2 * math.pi * r * (r + h)

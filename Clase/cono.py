@@ -4,7 +4,7 @@ class Cono:
         self.r = r
         self.h = h
 
-    def propiedades_cono(r, h):
+    def propiedades_cono(r:float, h:float):
         g = math.sqrt((r ** 2) * (h ** 2))
         diametro = 2 * r
         areabase = math.pi * (r ** 2)
