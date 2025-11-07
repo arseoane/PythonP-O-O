@@ -1,28 +1,21 @@
 import math
 class Cilindro:
-    def __init__(self, r):
+    def __init__(self, r, h):
         self.r = r
+        self.h = h
 
-    def propiedades_cilindro(r, h, rho=None):
-        Ab = math.pi * r ** 2
-        Al = 2 * math.pi * r * h
-        At = 2 * math.pi * r * (r + h)
-        V = math.pi * r ** 2 * h
-        resultado = {
-            "Ab": Ab,
-            "Al": Al,
-            "At": At,
-            "V": V
+    def propiedades_cilindro(r, h):
+        areabase = math.pi * r ** 2
+        arealat = 2 * math.pi * r * h
+        areatotal = 2 * math.pi * r * (r + h)
+        volume = math.pi * r ** 2 * h
+        resultados = {
+            "Área base = ": areabase,
+            "Área lateral = ": arealat,
+            "Área total = ": areatotal,
+            "Volume = ": volume
         }
-        if rho is not None:
-            m = rho * V
-            Iz = 0.5 * m * r ** 2
-            Ix = (1 / 12) * m * (3 * r ** 2 + h ** 2)
-            resultado.update({
-                "m": m,
-                "Iz": Iz,
-                "Ix": Ix,
-                "Iy": Ix,
-                "z_cm": h / 2
-            })
+        resultado = ""
+        for key, value in resultados.items():
+            resultado += key + " " + str(value) + "\n"
         return resultado

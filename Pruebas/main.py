@@ -1,3 +1,8 @@
-from validar_dni_completo import validar
+from persoa import Persoa
 
-print(validar.validar("53535358P"))
+p1 = Persoa("Antonio",109,"12345678Z")
+
+Persoa.cumprirAno(p1.idade)
+print(p1.idade)
+Persoa.cumprirAno(p1.idade)
+print(p1.idade)
