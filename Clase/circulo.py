@@ -9,3 +9,6 @@ class Circulo:
 
     def perimetro(radio):
         return 2 * math.pi * radio
+
+    def calcularArea(radio):
+        return math.pi * (radio ** 2)
