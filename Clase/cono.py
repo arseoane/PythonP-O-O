@@ -1,15 +1,18 @@
 import math
+
 class Cono:
-    def __init__(self, r, h):
-        self.r = r
-        self.h = h
+    def __init__(self, radio, altura):
+        self.radio = radio
+        self.altura = altura
 
-    def propiedades_cono(r:float, h:float):
-        g = math.sqrt((r ** 2) * (h ** 2))
-        diametro = 2 * r
-        areabase = math.pi * (r ** 2)
-        arealateral = math.pi * r * g
-        areatotal = math.pi * r * (g + r)
-        volumen = (1/3) * math.pi * (r ** 2) * h
+    def generatriz(self):
+        return math.sqrt(self.radio**2 + self.altura**2)
 
-        return f"Diámetro: {diametro}\nÁrea base: {areabase}\nÁrea lateral: {arealateral}\nÁrea total: {areatotal}\nVolumen: {volumen}"
+    def superficie_lateral(self):
+        return math.pi * self.radio * self.generatriz()
+
+    def superficie_total(self):
+        return self.superficie_lateral() + math.pi * self.radio**2
+
+    def volumen(self):
+        return (1/3) * math.pi * self.radio**3 * (self.altura / self.radio)
