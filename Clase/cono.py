@@ -5,14 +5,14 @@ class Cono:
         self.radio = radio
         self.altura = altura
 
-    def generatriz(self):
-        return math.sqrt(self.radio**2 + self.altura**2)
+    def generatriz(radio, altura):
+        return math.sqrt(radio**2 + altura**2)
 
-    def superficie_lateral(self):
-        return math.pi * self.radio * self.generatriz()
+    def superficie_lateral(radio, altura):
+        return math.pi * radio * (math.sqrt(radio**2 + altura**2))
 
-    def superficie_total(self):
-        return self.superficie_lateral() + math.pi * self.radio**2
+    def superficie_total(radio, altura):
+        return (math.pi * radio * (math.sqrt(radio**2 + altura**2))) + math.pi * radio**2
 
-    def volumen(self):
-        return (1/3) * math.pi * self.radio**3 * (self.altura / self.radio)
+    def volumen(radio, altura):
+        return (1/3) * math.pi * radio**3 * (altura / radio)
