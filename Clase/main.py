@@ -11,3 +11,8 @@ print(hora1.getMinutos())
 
 print(hora1.converterMinutos())
 print(hora1.converterSegundos())
+
+hora1.incrementSegundos(100)
+print(hora1.converterSegundos())
+
+print(hora1.mostrarFormato12Horas())

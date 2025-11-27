@@ -36,3 +36,9 @@ class Horas:
 
     def incrementSegundos(self, segmas):
         self.segundos += segmas
+
+    def mostrarFormato12Horas(self):
+        if self.horas > 12:
+            return f"{self.horas - 12}:{self.minutos}:{self.segundos} PM"
+        else:
+            return f"{self.horas}:{self.minutos}:{self.segundos} AM"
