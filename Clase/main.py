@@ -1,18 +1,13 @@
-from Clase.esfera import Esfera
-from circulo import Circulo
-from cilindro import Cilindro
-from cono import Cono
-from data import Fecha
+from horas import Horas
 
-print(Circulo.obterDiametro(10))
-print(Circulo.perimetro(10))
-print(Circulo.calcularArea(10))
-print(Cilindro.propiedades_cilindro(10, 10))
-print(Esfera.volumen(10))
-print(Esfera.superficie(10))
-print(Esfera.diametro((10)))
-print(Cono.volumen(10,10))
+hora1 = Horas(24, 1, 3)
 
-fecha1 = Fecha(20,12,2012)
+print(hora1.getSegundos())
+print(hora1.getMinutos())
+print(hora1.getHoras())
 
-print(fecha1.toStr())
+hora1.setMinutos(3)
+print(hora1.getMinutos())
+
+print(hora1.converterMinutos())
+print(hora1.converterSegundos())
