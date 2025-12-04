@@ -1,44 +1,50 @@
 class Horas:
     def __init__(self, horas, minutos, segundos):
-        self.horas = horas
-        self.minutos = minutos
-        self.segundos = segundos
+        if ((horas >= 0 and horas <= 24) and (minutos >= 0 and minutos <= 60) and (segundos >= 0 and segundos <= 60)) == True:
+            self.horas = horas
+            self.minutos = minutos
+            self.segundos = segundos
+        else:
+            self.horas = 0
+            self.minutos = 0
+            self.segundos = 0
 
-    def setHoras(self, horas):
-        self.horas = horas
-
-    def setMinutos(self, minutos):
-        self.minutos = minutos
-
-    def setSegundos(self, segundos):
-        self.segundos = segundos
-
-    def getHoras(self):
-        return self.horas
-
-    def getMinutos(self):
-        return self.minutos
 
     def getSegundos(self):
         return self.segundos
 
-    def converterSegundos(self):
-        return self.segundos/3600
+    def getMinutos(self):
+        return self.minutos
 
-    def converterMinutos(self):
-        return self.minutos/60
+    def getHoras(self):
+        return self.horas
 
-    def incrementHoras(self, horamas):
-        self.horas += horamas
+    def setSegundos(self, segundos):
+        self.segundos = segundos
 
-    def incrementMinutos(self, minmas):
-        self.minutos += minmas
+    def setMinutos(self, minutos):
+        self.minutos = minutos
 
-    def incrementSegundos(self, segmas):
-        self.segundos += segmas
+    def setHoras(self, horas):
+        self.horas = horas
+
+    def converterSegundos(self, segundos):
+        return segundos / 3600
+
+    def converterMinutos(self, minutos):
+        return minutos / 60
+
+    def incrementarSegundos(self, segundos):
+        self.segundos += segundos
+
+    def incrementarMinutos(self, minutos):
+        self.minutos += minutos
+
+    def incrementarHoras(self, horas):
+        self.horas += horas
 
     def mostrarFormato12Horas(self):
         if self.horas > 12:
-            return f"{self.horas - 12}:{self.minutos}:{self.segundos} PM"
+            return f"{(self.horas - 12):02d}:{self.minutos:02d}:{self.segundos:02d} PM"
         else:
-            return f"{self.horas}:{self.minutos}:{self.segundos} AM"
+            return f"{self.horas:02d}:{self.minutos:02d}:{self.segundos:02d} AM"
