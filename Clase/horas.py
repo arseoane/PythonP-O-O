@@ -44,7 +44,30 @@ class Horas:
         self.horas += horas
 
     def mostrarFormato12Horas(self):
-        if self.horas > 12:
+        if self.horas > 12 and self.horas <= 24:
             return f"{(self.horas - 12):02d}:{self.minutos:02d}:{self.segundos:02d} PM"
+        elif self.horas > 24:
+            return f"00:00:00 XX"
         else:
             return f"{self.horas:02d}:{self.minutos:02d}:{self.segundos:02d} AM"
+
+    def __asignacionHoraColeccion(self,horas):
+        if len(horas) == 3:
+            if isinstance(horas[3], int):
+                self.setHoras(horas[0])
+            else:
+                self.setHoras(0)
+
+    def __asignacionMinutoColeccion(self,minutos):
+        if len(minutos) == 3:
+            if isinstance(minutos[3], int):
+                self.setMinutos(minutos[0])
+            else:
+                self.setMinutos(0)
+
+    def __asignacionSegundoColeccion(self,segundos):
+        if len(segundos) == 3:
+            if isinstance(segundos[3], int):
+                self.setSegundos(segundos[0])
+            else:
+                self.setSegundos(0)
