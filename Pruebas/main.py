@@ -1,28 +1,23 @@
-from horastest import Horas
+from tests_ia import Coche, Moto, Camion
 
-horas1 = Horas(23, 84, 20)
-print(horas1.mostrarFormato12Horas())
+# Crear objetos
+coche = Coche("Seat", "León", 2022)
+moto = Moto("Yamaha", "MT-07", 2023, "700cc")
+camion = Camion("Volvo", "FH", 2020, carga_maxima=25000)
 
-horas1._Horas__asignacionHoraColeccion(3203)
-horas1._Horas__asignacionMinutoColeccion(23)
-print(horas1.mostrarFormato12Horas())
+# Probar cada uno
+coche.encender()
+coche.acelerar(80)
+coche.info()
+print()
 
-print(horas1.mostrarHoras())
-print(horas1.mostrarMinutos())
-print(horas1.mostrarSegundos())
+moto.info()
+moto.hacer_caballito()
+print()
 
-horas2 = Horas(23, 48, 20)
+camion.info()
+camion.cargar(15000)
+camion.cargar(12000)   # Debe fallar o quedarse en el máximo
+camion.info()
 
-horas2._Horas__asignacionHoraColeccion(23)
-
-horas1._Horas__asignacionSegundoColeccion(100)
-
-print(horas1.mostrarSegundos())
-
-print(horas2.mostrarSegundos())
-
-print(isinstance(horas1, Horas))
-
-print(horas2.setHoras(932039))
-
-horas2._Horas__asignacionHoraColeccion(23)
+print(coche.leerVel)
