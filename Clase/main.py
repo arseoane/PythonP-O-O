@@ -1,18 +1,8 @@
-from horas import Horas
+from bombilla import *
 
-hora1 = Horas(24, 1, 3)
+b1 = Bombilla(True)
 
-print(hora1.getSegundos())
-print(hora1.getMinutos())
-print(hora1.getHoras())
-
-hora1.setMinutos(3)
-print(hora1.getMinutos())
-
-print(hora1.converterMinutos(100))
-print(hora1.converterSegundos(100))
-
-hora1.incrementarSegundos(100)
-print(hora1.converterSegundos(100))
-
-print(hora1.mostrarFormato12Horas())
+b1.apagar()
+print(b1.estado())
+b1.encender()
+print(b1.estado())
