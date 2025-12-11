@@ -40,3 +40,6 @@ class Pedido:
         for produtor in self.listaprods:
             total += produtor.stock
         return total
+
+    def mostrarCesta(self):
+        return self.listaprods
