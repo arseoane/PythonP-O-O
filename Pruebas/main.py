@@ -1,23 +1,15 @@
-from tests_ia import Coche, Moto, Camion
+from tests_ia import *
 
-# Crear objetos
-coche = Coche("Seat", "León", 2022)
-moto = Moto("Yamaha", "MT-07", 2023, "700cc")
-camion = Camion("Volvo", "FH", 2020, carga_maxima=25000)
+libro = Libro("One Piece", "Eichiiro Oda", 2006, 250, 5)
 
-# Probar cada uno
-coche.encender()
-coche.acelerar(80)
-coche.info()
-print()
+print(libro.amosarLibro())
+coche = Coche()
 
-moto.info()
-moto.hacer_caballito()
-print()
+print(coche.getVelocidade())
+coche.acelerar(10)
+print(coche.getVelocidade())
 
-camion.info()
-camion.cargar(15000)
-camion.cargar(12000)   # Debe fallar o quedarse en el máximo
-camion.info()
-
-print(coche.leerVel)
+conta1 = Conta("Conta 1", 1, "Euro", 100)
+print(conta1.info())
+conta1.ingreso(1)
+print(conta1.info())
