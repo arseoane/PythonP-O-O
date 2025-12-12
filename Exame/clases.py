@@ -1,4 +1,5 @@
 import datetime
+from datetime import timedelta
 
 
 class Persoa:
@@ -59,8 +60,12 @@ class Chamada:
 
         self.sainte = sainte
 
+    @property
+    def minutosChamada(self):
+        return ((max(self.data_hora_ini.hour,self.data_hora_fin.hour) - min(self.data_hora_ini.hour,self.data_hora_fin.hour)) * 60) + (max(self.data_hora_ini.minute,self.data_hora_fin.minute) - min(self.data_hora_ini.minute,self.data_hora_fin.minute))
+
     def __str__(self):
-        return f"Cliente: \n{self.cliente}\nInterlocutor: {self.interlocutor}\nData e hora de comenzo: {self.data_hora_ini}\nData e hora de fin: {self.data_hora_fin}\nSaínte: {self.sainte}"
+        return f"Cliente: \n{self.cliente}\nInterlocutor: {self.interlocutor}\nData e hora de comenzo: {self.data_hora_ini}\nData e hora de fin: {self.data_hora_fin}\nMinutos de chamada: {self.minutosChamada}\nSaínte: {self.sainte}"
 
 class ChamadasRexistradas:
     def __init__(self, lista_chamadas=[]):
@@ -76,3 +81,10 @@ class ChamadasRexistradas:
             if chamar.cliente.dni == dni_query:
                 lchamadas += str(chamar) + "\n\n"
         return lchamadas
+
+    def calculoImpChamadas(self,dni_query):
+        impchamadas = 0
+        for chamar in self.lista_chamadas:
+            if chamar.cliente.dni == dni_query:
+                impchamadas += chamar.minutosChamada * 0.0002
+        return f"{impchamadas}€"
