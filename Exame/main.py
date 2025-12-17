@@ -1,9 +1,9 @@
-from clases import *
+from clasecorreccion import *
 
 persoa1 = Persoa("Santi","12345678Z",36002)
 persoa2 = Persoa("Enrique","12345678Z",36984)
 
-print(persoa1.comparar(persoa2))
+print(persoa1.__eq__(persoa2))
 
 cliente1 = ClienteTel("Santi","12345678Z",36984,"+34 612 345 678")
 cliente2 = ClienteTel("Adriana","87654321P",36995,"+34 912 345 678")
