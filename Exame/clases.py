@@ -79,7 +79,7 @@ class ChamadasRexistradas:
         lchamadas = ""
         for chamar in self.lista_chamadas:
             if chamar.cliente.dni == dni_query:
-                lchamadas += str(chamar) + "\n\n"
+                lchamadas += "\n" + str(chamar) + "\n"
         return lchamadas
 
     def calculoImpChamadas(self,dni_query):
