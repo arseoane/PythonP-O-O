@@ -1,7 +1,7 @@
 class CalculadoraBinaria:
     def __init__(self, a, b):
-        self.__a = a
-        self.__b = b
+        self.set_a(a)
+        self.set_b(b)
 
     def set_a(self, a):
         self.__a = a
@@ -29,3 +29,6 @@ class CalculadoraBinaria:
                 return "Erro: División por cero"
         else:
             return "Operación non válida"
+
+    a = property(get_a, set_a)
+    b = property(get_b, set_b)

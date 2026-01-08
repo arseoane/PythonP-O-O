@@ -13,6 +13,6 @@ print(errorcalc.operacion('@'))
 
 print(calc.operacion('+'))
 print(calc.get_a())
-calc.set_a(calc.get_b())
 
-print(calc.operacion('+'))
+calc.set_b(999)
+print(calc.operacion('/'))
