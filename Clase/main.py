@@ -16,3 +16,10 @@ print(calc.get_a())
 
 calc.set_b(999)
 print(calc.operacion('/'))
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Non se pode dividir por 0.")
+except Exception:
+    print("Erro xeral")
