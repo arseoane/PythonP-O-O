@@ -24,5 +24,8 @@ class Punto3:
     def __str__(self):
         return f"X: {self.__x}\nY: {self.__y}"
 
-punto3 = Punto3(1, 2)
-print(punto3)
+try:
+    punto3 = Punto3(1, -2)
+    print(punto3)
+except Exception as e:
+    print(e)
